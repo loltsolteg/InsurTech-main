@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card card-body">
+
+        <div class="container">
+
+            <h3 class="text-danger text-center">Budget Tracker - Edit Budget</h3>
+            {{!-- <h5>Today - {{date}}</h5> --}}
+            <h5>Today</h5>
+
+            <form action="/wealth/tracking/saveEditedBudget/{{budgetT.id}}?_method=PUT" method="post" id="wEditBudget">
+                <input type="hidden" name="_method" value="PUT">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="budget">Budget</label>
+                            {{!-- <input type="text" class="form-control" name="budget" required> --}}
+                            <p style="color: red;">{{budgetT.budget}}</p>
+                        </div>
+
+                        <div class="col">
+                            <label for="amount">Amount</label>
+                            <input type="text" class="form-control" name="amount" value="{{budgetT.amount}}">
+                        </div>
+                    </div>
+
+                    <br>
+                    <button id="butAddMeal" type="submit" class="btn btn-danger">Save Edit
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

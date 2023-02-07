@@ -1,0 +1,59 @@
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+    <h2 class="heading">Overall Dashboard</h2>
+    <br>
+    <div class="grid-container">
+        <div class="grid-item">
+            {{#if budgetT}}
+            <h4>Total Budget for the Month - ${{sumObj budgetT "amount"}}</h4>
+            <div class="displayBudget">
+                <table class="table" border="1px solid black">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="row">Budget Name</th>
+                        <th scope="row">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each budgetT}}
+                    <tr>
+                        <th scope="col">{{budget}}</th>
+                        <td>${{amount}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            </div> 
+            {{/if}}
+        </div>
+
+        <div class="grid-item">
+            {{#if expensesT}}
+            <h4>Total Expenses for the Month - ${{sumObj expensesT "amount"}}</h4>
+            <div class="displayExpense">
+                <table class="table" border="1px solid black">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="row">Expense</th>
+                        <th scope="row">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each expensesT}}
+                    <tr>
+                        <th scope="col">{{expense}}</th>
+                        <td>${{amount}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="grid-item">
+            <h4>Total Savings for the Month - $</h4>
+
+        </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card card-body">
+        <div class="container">
+            <div class="float-right">
+                <a href="/health/report/">
+                    <i class="fa fa-close" style="font-size:48px;color:rgb(189, 0, 0)"></i>
+                </a>
+            </div>
+            <h3 class="text-danger text-center">Add Height</h3>
+
+            <br>
+            <form action="/health/report/hrAddHeight" method="post" id="hrAddHeight">
+                <div class="form-group">
+                    <div class="row">
+                        <label for="height">Height</label>
+                        <input type="text" class="form-control" name="height" required>                            
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <label for="date">Date:</label>
+                            <input type="date" id="start" name="date" class="form-control" required pattern="\d{4}-\d{2}-\d{2}">
+                        </div>
+                        <div class="col">
+                            <label for="time">Time:</label>
+                            <input id="time" type="time" name="time" class="form-control" required pattern="[0-9]{2}:[0-9]{2}"/>
+                        </div>
+                    </div>
+
+                    <br>
+                    <button id="butAddHeight" type="submit" class="btn btn-danger">Save</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

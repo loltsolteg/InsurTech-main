@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="card card-body">
+
+        <div class="container">
+
+            <h3 class="text-danger text-center">Health Goals- Add Goal</h3>
+            <h5>Today</h5>
+
+            <form action="/health/goals/hgAddGoal" method="post" id="hgAddGoal">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label style="color: red; font-weight: bold;">Nutrition</label>
+                        </div>
+                        <div class="col">
+                            <label style="color: red; font-weight: bold;">Fitness</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="calories">Daily Calories (cal)</label>
+                            <input type="text" class="form-control" name="calories">
+                        </div>
+                        <div class="col">
+                            <label for="calburnt">Calories Burnt (cal)</label>
+                            <input type="text" class="form-control" name="calburnt">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="carbs">Avg Carbs (%)</label>
+                            <input type="text" class="form-control" name="carbs">
+                        </div>
+                        <div class="col">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="text" class="form-control" name="weight">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="fat">Avg Fat (%)</label>
+                            <input type="text" class="form-control" name="fat">
+                        </div>
+                        <div class="col">
+                            <label for="stepcount">Step Count</label>
+                            <input type="text" class="form-control" name="stepcount">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="protein">Avg Protein (%)</label>
+                            <input type="text" class="form-control" name="protein">
+                        </div>
+                        <div class="col">
+                            <label for="duration">Activity Duration (min)</label>
+                            <input type="text" class="form-control" name="duration">
+                        </div>
+                    </div>
+                    <br>
+                    <button id="butAddGoal" type="submit" class="btn btn-danger">Add Goals
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

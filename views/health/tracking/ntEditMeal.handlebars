@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="card card-body">
+
+        <div class="container">
+
+            <h3 class="text-danger text-center">Nutrition Tracker - Edit Meal</h3>
+            <h5>Today - {{todaydate}}</h5>
+
+            <form action="/health/tracking/saveEditedMeal/{{nutritionT.id}}?_method=PUT" method="post" id="ntEditMeal">
+                <input type="hidden" name="_method" value="PUT">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="meal">Meal</label>
+                            {{!-- <input type="text" class="form-control" name="meal" required> --}}
+                            <p style="color: red;">{{nutritionT.meal}}</p>
+                        </div>
+
+                        <div class="col">
+                            <label for="carbs">Carbs (%)</label>
+                            <input type="text" class="form-control" name="carbs" value="{{nutritionT.carbs}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="food">Food</label>
+                            <input type="text" class="form-control" name="food" value="{{nutritionT.food}}" required>
+                        </div>
+                        <div class="col">
+                            <label for="fat">Fat (%)</label>
+                            <input type="text" class="form-control" name="fat" value="{{nutritionT.fat}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="calories">Calories</label>
+                            <input type="text" class="form-control" name="calories" value="{{nutritionT.calories}}">
+                        </div>
+                        <div class="col">
+                            <label for="protein">Protein (%)</label>
+                            <input type="text" class="form-control" name="protein" value="{{nutritionT.protein}}">
+                        </div>
+                    </div>
+
+                    <br>
+                    <button id="butAddMeal" type="submit" class="btn btn-danger">Save Edit
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

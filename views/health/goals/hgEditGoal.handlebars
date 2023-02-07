@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="card card-body">
+
+        <div class="container">
+
+            <h3 class="text-danger text-center">Health Goals- Edit Goal</h3>
+
+            <p>Goal Date: {{hgoalsT.gdate}}</p>
+            <form action="/health/goals/saveEditedGoal/{{hgoalsT.id}}?_method=PUT" method="post" id="ntEditMeal">
+                <input type="hidden" name="_method" value="PUT">
+                
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label style="color: red; font-weight: bold;">Nutrition</label>
+                        </div>
+                        <div class="col">
+                            <label style="color: red; font-weight: bold;">Fitness</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="calories">Daily Calories (cal)</label>
+                            <input type="text" class="form-control" name="calories" value="{{hgoalsT.gcalories}}">
+                        </div>
+                        <div class="col">
+                            <label for="calburnt">Calories Burnt (cal)</label>
+                            <input type="text" class="form-control" name="calburnt" value="{{hgoalsT.gcalburnt}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="carbs">Avg Carbs (%)</label>
+                            <input type="text" class="form-control" name="carbs" value="{{hgoalsT.gcarbs}}">
+                        </div>
+                        <div class="col">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="text" class="form-control" name="weight" value="{{hgoalsT.gweight}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="fat">Avg Fat (%)</label>
+                            <input type="text" class="form-control" name="fat" value="{{hgoalsT.gfat}}">
+                        </div>
+                        <div class="col">
+                            <label for="stepcount">Step Count</label>
+                            <input type="text" class="form-control" name="stepcount" value="{{hgoalsT.gstepcount}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="protein">Avg Protein (%)</label>
+                            <input type="text" class="form-control" name="protein" value="{{hgoalsT.gprotein}}">
+                        </div>
+                        <div class="col">
+                            <label for="duration">Activity Duration (min)</label>
+                            <input type="text" class="form-control" name="duration" value="{{hgoalsT.gduration}}">
+                        </div>
+                    </div>
+                    <br>
+                    <button id="butAddGoal" type="submit" class="btn btn-danger">Save Edit
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+.logo-image{
+  width: 140px;
+  overflow: hidden;
+  padding: 10px;
+  margin: auto;
+}
+
+.health-asst-img{
+  width: 250px;
+  margin: auto;
+}
+
+.wealth-asst-img{
+  width: 250px;
+  margin: auto;
+  padding: 10px;
+}
+
+.wealth-asst-txt{
+  text-align: center;
+}
+
+/* Health Report*/
+.add-record-img{
+  width: 30px;
+  margin: 5px;
+}
+
+.delete-record-img{
+  width: 30px;
+  margin: 5px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #F5C0C0;
+  padding: 10px;
+}
+
+.grid-item{
+  background-color: white;
+  border: 1px solid black;
+  padding: 30px;
+  text-align: center;
+}
+
+.heading{
+  text-align: center;
+}
+
+.reward-asst-img{
+  width: 250px;
+  margin: auto;
+  padding: 10px;
+}
+
+.viewreward-asst-img{
+  width: 450px;
+  margin: auto;
+  padding: 10px;
+}
+
+#reedemButton{
+  background-color: #4CAF50;
+}
+
+.reedeemHead{
+  font-weight: bold;
+}

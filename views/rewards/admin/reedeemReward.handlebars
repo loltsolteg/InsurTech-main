@@ -1,0 +1,41 @@
+<div class="container">
+
+    
+    <div class="card card-body">
+
+        <div class="container">
+
+            <h3 class="text-danger text-center">Reedeem Rewards</h3>
+            <h5 style="display: inline-block;">Rewards</h5>
+
+            <table class="table">
+                <thead class="table-danger">
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Points</th>
+                    <th>Category</th>
+                    <th> </th>
+                </thead>
+                <tbody>
+
+                    {{#each rewards}}
+                    <tr>
+                        <td scope="col">{{id}}</td>
+                        <td scope="col">{{title}}</th>
+                        <td scope="col">{{price}}</td>
+                        <td scope="col">{{points}}</td>
+                        <td scope="col">{{category}}</td>
+                        <td>
+                            <a href='/rewards/admin/confirmReedeem/{{id}}' id="reedemButton" class="btn btn-sm btn-primary">Redeem</a>
+                        </td>
+                    </tr>
+                    {{/each}}  
+                    
+                </tbody>
+                
+            </table>
+
+        </div>
+    </div>
+</div>

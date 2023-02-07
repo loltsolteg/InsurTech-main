@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="card card-body">
+
+        <div class="container">
+
+            <h3 class="text-danger text-center">Nutrition Tracker - Add Meal</h3>
+            <h5>Today - {{todaydate}}</h5>
+
+            <form action="/health/tracking/ntAddMeal" method="post" id="ntAddMeal">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="meal">Meal</label>
+                            {{!-- <input type="text" class="form-control" name="meal" required> --}}
+                            <select class="form-control" name="meal">
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                                <option value="Snack">Snack</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+
+                        <div class="col">
+                            <label for="carbs">Carbs (%)</label>
+                            <input type="text" class="form-control" name="carbs">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="food">Food</label>
+                            <input type="text" class="form-control" name="food" required>
+                        </div>
+                        <div class="col">
+                            <label for="fat">Fat (%)</label>
+                            <input type="text" class="form-control" name="fat">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="calories">Calories</label>
+                            <input type="text" class="form-control" name="calories">
+                        </div>
+                        <div class="col">
+                            <label for="protein">Protein (%)</label>
+                            <input type="text" class="form-control" name="protein">
+                        </div>
+                    </div>
+
+                    <br>
+                    <button id="butAddMeal" type="submit" class="btn btn-danger">Add New
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

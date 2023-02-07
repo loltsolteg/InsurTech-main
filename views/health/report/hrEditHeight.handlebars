@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card card-body">
+        <div class="container">
+            <div class="float-right">
+                <a href="/health/report/">
+                    <i class="fa fa-close" style="font-size:48px;color:rgb(189, 0, 0)"></i>
+                </a>
+            </div>
+            <h3 class="text-danger text-center">Edit Height</h3>
+
+            <form action="/health/report/editedHeight/{{heightT.id}}?_method=PUT" method="post" >
+                <input type="hidden" name="_method" value="PUT">
+
+                <div class="form-group">
+                    <div class="row">
+                        <label for="height" >Height</label>
+                        <input type="text" value="{{heightT.height}}" class="form-control" name="height" required>                            
+                    </div>
+                    </div>
+                    <p style="">{{heightT.date}}, {{heightT.time}}</p>
+
+                    <br>
+                    <button id="butEditHeight" type="submit" class="btn btn-danger">Update</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

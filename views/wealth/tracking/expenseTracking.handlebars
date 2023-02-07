@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="card card-body">
+        <div class="container">
+            <h3 class="text-danger text-center">Expenses Tracking</h3>
+
+            {{#if expensesT}}
+            <div>
+                <h5 style="display: inline-block;">Today</h5>
+                <div class="dropdown float-right">
+                    <button type="button" class="btn btn-light mb-4 " data-toggle="dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-three-dots"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/wealth/tracking/expense/AddExpense">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z">
+                                </path>
+                            </svg>
+                            Add Expense</a>
+
+                        <a class="dropdown-item" href="/wealth/tracking/expense/showEditExpenses">Edit Expense</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {{!-- to add in after goals pg n db --}}
+            <table class="table" border="1px solid black">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="row">Expense</th>
+                        <th scope="row">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each expensesT}}
+                    <tr>
+                        <th scope="col">{{expense}}</th>
+                        <td>${{amount}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{else}}
+            <div>
+                <h5 style="display: inline-block;">Today</h5>
+                <div class="dropdown float-right">
+                    <button type="button" class="btn btn-light mb-4 " data-toggle="dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-three-dots"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/wealth/tracking/expense/AddExpense">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z">
+                                </path>
+                            </svg>
+                            Add Expense</a>
+
+                        <a class="dropdown-item" href="/wealth/tracking/expense/showEditExpenses">Edit Expense</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {{!-- to add in after goals pg n db --}}
+            <table class="table" border="1px solid black">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="row">Expense</th>
+                        <th scope="row">Amount</th>
+                    </tr>
+                </thead>
+            </table>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+{{!-- viewing of nutritiontable --}}
+<div class="container">
+    <div class="card card-body">
+        <div class="container">
+            <h3 class="text-danger text-center">Nutrition Tracking - Edit Meals</h3>
+
+
+            {{#if nutritionT}}
+            {{!-- {{#each nutritionT}}
+            <h5>Today: {{date}}</h5>
+            {{/each}} --}}
+
+            <h5>Today - {{todaydate}}</h5>
+
+            <div class="dropdown float-right">
+                <button type="button" class="btn btn-light mb-4 " data-toggle="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-three-dots"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z">
+                        </path>
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/health/tracking/nutrition/addMeal">Add Meal</a>
+                    <a class="dropdown-item" href="/health/tracking/nutrition">&lt;View Meals</a>
+                </div>
+            </div>
+            <br>
+            <table class="table">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="col">Nutrition</th>
+                        {{#each nutritionT}}
+                        <th scope="col">{{meal}}
+
+                            <a href="/health/tracking/ntEditMeal/{{id}}">
+                                <i class="fa-solid fa-pen" style="color: gray;"></i>
+                            </a>
+                            <a href="/health/tracking/ntDeleteMeal/{{id}}" data-toggle="confirmation"
+                                data-title="Confirm delete?">
+                                <i class="fa-solid fa-trash" style="color: gray;"></i>
+                            </a>
+
+                        </th>
+
+                        {{/each}}
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Food</th>
+                        {{#each nutritionT}}
+                        <td>{{food}}</td>
+                        {{/each}}
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Calories (cal)</th>
+                        {{#each nutritionT}}
+                        {{#if calories}}
+                        <td>{{calories}}</td>
+                        {{else}}
+                        <td>-</td>
+                        {{/if}}
+                        {{/each}}
+
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Carbs (%)</th>
+                        {{#each nutritionT}}
+                        {{#if carbs}}
+                        <td>{{carbs}}</td>
+                        {{else}}
+                        <td>-</td>
+                        {{/if}}
+                        {{/each}}
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Fat (%)</th>
+                        {{#each nutritionT}}
+                        {{#if fat}}
+                        <td>{{fat}}</td>
+                        {{else}}
+                        <td>-</td>
+                        {{/if}}
+                        {{/each}}
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Protein (%)</th>
+                        {{#each nutritionT}}
+                        {{#if protein}}
+                        <td>{{protein}}</td>
+                        {{else}}
+                        <td>-</td>
+                        {{/if}}
+
+
+                        {{/each}}
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+            {{else}}
+
+            {{/if}}
+        </div>
+
+    </div>
+</div>
+
+
+<!-- JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-confirmation2/dist/bootstrap-confirmation.min.js"></script>
+<script>
+    $('[data-toggle=confirmation]').confirmation({
+        rootSelector: '[data-toggle=confirmation]',
+    });
+</script>

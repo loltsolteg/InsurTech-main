@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card card-body">
+        <div class="container">
+            <h3>Budget Tracker - Add Budget</h3>
+            <h5 style="display: inline-block;">Today</h5>
+
+            <form action="/wealth/tracking/wAddBudget" method="post" id="wAddBudget">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="budget">Budget</label>
+                            <input type="text" class="form-control" name="budget" required>
+                        </div>
+                        <div class="col">
+                            <label for="amount">Amount ($)</label>
+                            <input type="number" class="form-control" name="amount" required>
+                        </div>
+                        <button id="butAddBudget" type="submit" class="btn btn-danger">Add New</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,355 @@
+{{!-- viewing of healthgoal tables --}}
+<div class="container">
+    <div class="card card-body">
+        <div class="container">
+
+
+            <h3 class="text-danger text-center">Health Goals</h3>
+
+            {{#if hgoalsT}}
+
+
+            <h5>Today - {{todaydate}}</h5>
+
+            {{!-- <h5>All Health Goals</h5> --}}
+            {{#each hgoalsT}}
+
+            <a href="/health/goals/hgEditGoal/{{id}}">
+                <button class="btn btn-outline-secondary float-right">Edit Goals
+                    <i class="fa-solid fa-pen" style="color: gray;"></i>
+
+                </button>
+            </a>
+            <br>
+            <br>
+            <div class="row mb-2">
+
+                <div class="card card-body">
+
+
+
+                    {{!-- <p>{{gdate}}</p> --}}
+
+                    <table class="table">
+                        <thead class="table-danger">
+                            <tr>
+                                <th scope="col">Nutrition</th>
+                                <th scope="col">Goals</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <th scope="row">Daily Calories (cal)</th>
+
+                                {{#if gcalories}}
+                                <td>{{gcalories}}</td>
+                                {{setVar "varCal" gcalories}}
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Avg Carbs (%)</th>
+                                {{#if gcarbs}}
+                                <td>{{gcarbs}}</td>
+                                {{setVar "varCarb" gcarbs}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+                            </tr>
+                            <tr>
+                                <th scope="row">Avg Fat (%)</th>
+                                {{#if gfat}}
+                                <td>{{gfat}}</td>
+                                {{setVar "varFat" gfat}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Avg Protein (%)</th>
+                                {{#if gprotein}}
+                                <td>{{gprotein}}</td>
+                                {{setVar "varPrt" gprotein}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <table class="table">
+                        <thead class="table-danger">
+                            <tr>
+                                <th scope="col">Fitness</th>
+                                <th scope="col">Goals</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th scope="row">Calories Burnt (cal)</th>
+                                {{#if gcalburnt}}
+                                <td>{{gcalburnt}}</td>
+                                {{setVar "varCalB" gcalburnt}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Weight (kg)</th>
+                                {{#if gweight}}
+                                <td>{{gweight}}</td>
+                                {{setVar "varWgt" gweight}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Step Count</th>
+                                {{#if gstepcount}}
+                                <td>{{gstepcount}}</td>
+                                {{setVar "varStep" gstepcount}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Activity Duration (min)</th>
+                                {{#if gduration}}
+                                <td>{{gduration}}</td>
+                                {{setVar "varDur" gduration}}
+
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    {{/each}}
+                </div>
+
+                {{#if nutritionT}}
+                <div class="card card-body">
+                    {{#each nutritionT}}
+
+                    {{!-- <p>{{date}}</p> --}}
+
+                    <table class="table">
+                        <thead class="table-danger">
+                            <tr>
+                                <th scope="col">Current</th>
+                                <th scope="col" class="bg-warning">Remaining</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                {{#if sumCal}}
+                                <td>{{sumCal}}</td>
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+                                <td class="table-warning">{{subtract @root.varCal sumCal}}</td>
+                            </tr>
+                            <tr>
+                                {{#if avgCarbs}}
+                                <td>{{twoDP avgCarbs}}</td>
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+                                <td class="table-warning">{{subtract @root.varCarb avgCarbs}}</td>
+                            </tr>
+                            <tr>
+                                {{#if avgFat}}
+                                <td>{{twoDP avgFat}}</td>
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+                                <td class="table-warning">{{subtract @root.varFat avgFat}}</td>
+                            </tr>
+                            <tr>
+                                {{#if avgProtein}}
+                                <td>{{twoDP avgProtein}}</td>
+                                {{else}}
+                                <td>-</td>
+                                {{/if}}
+                                <td class="table-warning">{{subtract @root.varPrt avgProtein}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <table class="table">
+                        <thead class="table-danger">
+                            <tr>
+                                <th scope="col">Current</th>
+                                <th scope="col" class="bg-warning">Remaining</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td class="table-warning">{{@root.varCalB}}</td>
+
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td class="table-warning">{{@root.varWgt}}</td>
+
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td class="table-warning">{{@root.varStep}}</td>
+
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td class="table-warning">{{@root.varDur}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    {{/each}}
+                </div>
+                {{/if}}
+
+            </div>
+
+            {{else}}
+            <h5>Today - {{todaydate}}</h5>
+            <h4>No Goals added yet</h4>
+
+            <div class="dropdown float-right">
+                <button type="button" class="btn btn-light mb-4 " data-toggle="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-three-dots"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z">
+                        </path>
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/health/goals/addGoal">Add Goal</a>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="col">Nutrition</th>
+                        <th scope="col">Goals</th>
+
+                        <th scope="col">Current</th>
+                        <th scope="col" class="bg-warning">Remaining</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Calories (cal)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Avg Carbs (%)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Avg Fat (%)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Avg Protein (%)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="table-danger">
+                    <tr>
+                        <th scope="col">Fitness</th>
+                        <th scope="col">Goals</th>
+                        <th scope="col">Current</th>
+                        <th scope="col" class="bg-warning">Remaining</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Calories Burnt (cal)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Weight (kg)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Step Count</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Activity Duration (min)</th>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="table-warning">-</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+            {{/if}}
+        </div>
+
+    </div>
+</div>

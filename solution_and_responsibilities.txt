@@ -1,0 +1,17 @@
+week 9
+Pulse application is a web application to manage, monitor and review user's health and wealth outcomes. 
+They are rewarded based on achievement of health and wealth goals.
+
+Responsibilities:
+Shana 
+- navbar, healthAssistant.handlebars, healthTracking.handlebars pg
+- nutritionTracking 
+Ke Ting 
+- WealthAssistant.handlebars, wealthTracking.handlebars pg
+- budgetTracking 
+Yi Xuan 
+- healthReport 
+Zhan Rui 
+- login, register 
+Jia En 
+- rewards
